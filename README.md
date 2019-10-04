@@ -6,7 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Refactor CSS to be more dynamic and less pixel-dependent.  
 - Create component for checkboxes to clean up the app component.
-- A few unit tests for edge cases.
+- A few unit tests for edge cases and components
+- End to end tests
 
 ## Development server
 
