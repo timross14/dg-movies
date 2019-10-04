@@ -34,8 +34,4 @@ export class AppComponent implements OnInit {
       this.loading = false;
     })
   }
-
-  onToggle(value: any) {
-    
-  }
 }
