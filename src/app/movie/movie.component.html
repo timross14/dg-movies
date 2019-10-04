@@ -1,0 +1,32 @@
+<div *ngIf="loading; else elseBlock">
+  LOADING
+</div>
+<ng-template #elseBlock>
+  <div class="movie">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="../../../assets/images/{{movie.poster}}">
+      </div>
+      <div class="info col-sm-9">
+        <div class="row">
+          <h5 class="title">{{movie.title}}</h5>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div class="row">
+          <span class="rating col-sm-2">{{movie.rated}}</span>
+          <span class="runtime col-sm-2">{{movie.runtime}}</span>
+          <span class="empty col-sm-5"></span>
+          <span class="release col-sm-3">{{movie.released}}</span>
+        </div>
+        <div class="row plot">
+          {{movie.plot}}
+        </div>
+        <div class="imdbLink pull-right">
+          <a class="btn btn-primary" role="button" href='{{ movie.imdbLink }}'>View on IMDB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

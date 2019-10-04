@@ -1,0 +1,71 @@
+
+.movie {
+  width: 750px;
+  background-color: #E8EBEE;
+  border-radius: 8px;
+  border-width: 1px; 
+  border: solid;
+  border-color: black;
+  display: inline-block;
+  padding: 5px;
+  text-align: left;
+  margin: 10px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.movie img {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px;
+}
+
+.movie .plot {
+  padding-top: 10px;
+  padding-right: 10px;
+  font-size: 0.9em;
+}
+
+.movie .rating {
+  font-family: 'Courier New', Courier, monospace;
+  border: solid;
+  border-width: 1px;
+  border-color: #8D989D;
+  color: #8D989D;
+  border-radius: 4px;
+  text-align: center;
+  width: 75%;
+}
+
+.movie .imdbLink {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 12px;
+  padding-right: 12px;
+}
+
+.btn-primary,  .btn-primary:active, .btn-primary:visited {
+  background-color: #F9B44A;
+}
+
+.btn-primary:hover {
+  background-color: darkorange; 
+}
+
+.movie .btn {
+  width: 190px;
+  margin: 10px;
+}
+
+hr {
+  margin: 0px 10px 5px -10px;
+}
+.title {
+  margin: 0px;
+  padding: 0px;
+  padding-right: 5px;
+}

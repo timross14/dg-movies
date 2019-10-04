@@ -1,0 +1,4 @@
+{
+    "movieApiUrl": "http://www.omdbapi.com/?apikey=863c14fa&s=Batman",
+    "apiKey": "863c14fa"
+}
