@@ -24,20 +24,34 @@ beforeEach(() => {
   it('should create an instance', () => {
     expect(pipe).toBeTruthy();
   });
-  
+
+  it('should filter a range', () => {
+    let rangeMovie = {"Title": "Movie2", "Year": "2015-2019"};
+    let movies = [eightiesMovie, twentyTensMovie]
+    eighties = false;
+    twentyTens = true;
+
+    let result = pipe.transform(movies, eighties, nineties, twoThousands, twentyTens);
+    expect(result.length).toBe(1);
+    expect(result[0]["Year"]).toBe("2015")
+  });
+
+
   it('should filter by 1980s', () => {
     let movies = [eightiesMovie, twoThousandsMovie, twentyTensMovie]
-    nineties = true;
+    eighties = true;
+    nineties = false;
     twoThousands = false;
     twentyTens = false;
 
     let result = pipe.transform(movies, eighties, nineties, twoThousands, twentyTens);
     expect(result.length).toBe(1);
-    expect(result[0]["Year"]).toBe("1999")
+    expect(result[0]["Year"]).toBe("1989")
   });
 
   it('should filter by 1990s', () => {
     let movies = [ninetiesMovie, twoThousandsMovie, twentyTensMovie]
+    eighties = false;
     nineties = true;
     twoThousands = false;
     twentyTens = false;
@@ -49,6 +63,7 @@ beforeEach(() => {
 
   it('should filter by 2000s', () => {
     let movies = [ninetiesMovie, twoThousandsMovie, twentyTensMovie]
+    eighties = false;
     nineties = false;
     twoThousands = true;
     twentyTens = false;
@@ -60,6 +75,7 @@ beforeEach(() => {
 
   it('should filter by 2010s', () => {
     let movies = [ninetiesMovie, twoThousandsMovie, twentyTensMovie]
+    eighties = false;
     nineties = false;
     twoThousands = false;
     twentyTens = true;
@@ -71,6 +87,7 @@ beforeEach(() => {
 
   it('should filter all', () => {
     let movies = [ninetiesMovie, twoThousandsMovie, twentyTensMovie]
+    eighties = false;
     nineties = false;
     twoThousands = false;
     twentyTens = false;
