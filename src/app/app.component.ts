@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Movies';
   movies: [];
   loading: boolean;
+  eighties: boolean;
   nineties: boolean;
   twoThousands: boolean;
   twentyTens: boolean;
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.eighties = true;
     this.nineties = true;
     this.twoThousands = true;
     this.twentyTens = true;
