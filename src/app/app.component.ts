@@ -1,5 +1,6 @@
 import { OnInit, Component } from '@angular/core';
 import { OmdbService } from './omdb/omdb.service'
+import { DecadesModel } from './movie/decades.model';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,8 @@ export class AppComponent implements OnInit {
   title = 'Movies';
   movies: [];
   loading: boolean;
-  eighties: boolean;
-  nineties: boolean;
-  twoThousands: boolean;
-  twentyTens: boolean;
-  decades: {};
+
+  decades: DecadesModel;
   
   
   constructor(
@@ -24,10 +22,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.eighties = true;
-    this.nineties = true;
-    this.twoThousands = true;
-    this.twentyTens = true;
+    this.decades = new DecadesModel(true, true, true, true);
 
     let searchTerm = "Batman";
     this.omdbService.getMoviesByName(searchTerm).subscribe(movies => {
@@ -35,5 +30,9 @@ export class AppComponent implements OnInit {
       console.log(movies['Search'])
       this.loading = false;
     })
+  }
+
+  changeEvent($event) {
+    this.decades[$event[0]] = $event[1]
   }
 }

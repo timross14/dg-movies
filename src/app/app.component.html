@@ -2,8 +2,12 @@
     LOADING...
 </div>
 <div *ngIf="!loading" class="main container">
-    <!-- checkboxes would be good cantidates for components -->
-  <div class="btn-group btn-group-toggle decade-buttons" data-toggle="buttons">
+  <div class="btn-group" data-toggle="buttons">
+    <div *ngFor="let decade of decades | keyvalue">
+      <app-decade-checkbox (changeEvent)="changeEvent($event)" [decade]="decade.key" [decadeValue]="decade.value"></app-decade-checkbox>
+    </div>
+  </div>
+  <!-- <div class="btn-group btn-group-toggle decade-buttons" data-toggle="buttons">
     <label class="btn btn-primary" [class.active]="eighties">
       <input type="checkbox" [checked]="eighties" (change)="eighties = !eighties" autocomplete="off"> 1980s
     </label>
@@ -16,8 +20,8 @@
     <label class="btn btn-primary" [class.active]="twentyTens">
       <input type="checkbox" [checked]="twentyTens" (change)="twentyTens = !twentyTens" autocomplete="off"> 2010s
     </label>
-  </div>
-  <div *ngFor="let movie of movies | decades:eighties:nineties:twoThousands:twentyTens">
+  </div> -->
+  <div *ngFor="let movie of movies | decades:decades">
     <app-movie [imdbID]="movie.imdbID"></app-movie>
   </div>
 </div>

@@ -5,16 +5,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { DecadePipe } from './pipes/decades.pipe';
+import { DecadeComponent } from './decade/decade.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
-    DecadePipe
+    DecadePipe,
+    DecadeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

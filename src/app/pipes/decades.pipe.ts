@@ -1,29 +1,34 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import { DecadesModel } from '../movie/decades.model';
 
 @Pipe({
   name: "decades",
-  pure: true
+  pure: false
 })
 
 // can sort less here
 export class DecadePipe implements PipeTransform {
-  transform(movies, eighties: boolean, nineties: boolean, twoThousands: boolean, twentyTens: boolean ){
+  transform(movies, decades: DecadesModel ){
     var output = [];
-    eighties ? output.push(this.sortMoviesByYear(movies, 1980, 1989)) : null;
-    nineties ? output.push(this.sortMoviesByYear(movies, 1990, 1999)) : null;
-    twoThousands ? output.push(this.sortMoviesByYear(movies, 2000, 2009)) : null;
-    twentyTens ? output.push(this.sortMoviesByYear(movies, 2010, 2019)) : null;
+    console.log(decades)
+    decades.eighties ? output.push(this.filterByRange(movies, 1980, 1989)) : null;
+    decades.nineties ? output.push(this.filterByRange(movies, 1990, 1999)) : null;
+    decades.twoThousands ? output.push(this.filterByRange(movies, 2000, 2009)) : null;
+    decades.twentyTens ? output.push(this.filterByRange(movies, 2010, 2019)) : null;
     return [].concat(...output);
+    //return this.sortByYear(output);
   }
 
-  sortMoviesByYear(movies, startYear: number, endYear: number) {
+  filterByRange(movies, startYear: number, endYear: number) {
     return movies.filter(movie => {
-      console.log(movie.Year)
-       if (movie.Year.length > 4) {
-         let year = movie.Year.substring(0,4);
-         return +year >= startYear && +year <= endYear;
-       }
-       return +movie.Year >= startYear && +movie.Year <= endYear;
+      let year = movie.Year.substring(0,4);
+      return +year >= startYear && year <= endYear;
     });
   }
+
+  // sortByYear(movies) {
+  //   movies.sort((a, b) => {
+  //     (+a.Year > +b.Year) ? 1 : -1);
+  //   }
+  // }
 }

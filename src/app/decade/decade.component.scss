@@ -1,0 +1,13 @@
+.btn-primary:not(:active) {
+  background-color: white;
+  color: black;
+}
+
+.decade-buttons {
+  margin-top: 10px;
+}
+
+input {
+  visibility:hidden;
+  width:0px;
+}
