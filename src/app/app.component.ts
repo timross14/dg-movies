@@ -36,4 +36,11 @@ export class AppComponent implements OnInit {
       this.loading = false;
     })
   }
+
+  handleOnKeydown(event) {
+    let isEnterOrSpace = event.keyCode === 32 || event.keyCode === 13;
+    if(isEnterOrSpace) {
+      event.preventDefault();
+    }
+  }
 }

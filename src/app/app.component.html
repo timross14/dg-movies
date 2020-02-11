@@ -1,20 +1,20 @@
 <div *ngIf="loading">
-    LOADING...
+    LOADING MOVIE...
 </div>
 <div *ngIf="!loading" class="main container">
     <!-- checkboxes would be good cantidates for components -->
-  <div class="btn-group btn-group-toggle decade-buttons" data-toggle="buttons">
-    <label class="btn btn-primary" [class.active]="eighties">
-      <input type="checkbox" [checked]="eighties" (change)="eighties = !eighties" autocomplete="off"> 1980s
+  <div class="btn-group btn-group-toggle decade-buttons" >
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="eighties" (keydown)="handleOnKeydown($event)">
+      <input type="checkbox" tabindex="-1" [checked]="eighties" (change)="eighties = !eighties" autocomplete="off"> 1980s
     </label>
-    <label class="btn btn-primary" [class.active]="nineties">
-      <input type="checkbox" [checked]="nineties" (change)="nineties = !nineties" autocomplete="off"> 1990s
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="nineties">
+      <input type="checkbox" tabindex="-1" [checked]="nineties" (change)="nineties = !nineties" autocomplete="off"> 1990s
     </label>
-    <label class="btn btn-primary" [class.active]="twoThousands">
-      <input type="checkbox" [checked]="twoThousands" (change)="twoThousands = !twoThousands" autocomplete="off"> 2000s
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twoThousands">
+      <input type="checkbox" tabindex="-1" [checked]="twoThousands" (change)="twoThousands = !twoThousands" autocomplete="off"> 2000s
     </label>
-    <label class="btn btn-primary" [class.active]="twentyTens">
-      <input type="checkbox" [checked]="twentyTens" (change)="twentyTens = !twentyTens" autocomplete="off"> 2010s
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twentyTens">
+      <input type="checkbox" tabindex="-1" [checked]="twentyTens" (change)="twentyTens = !twentyTens" autocomplete="off"> 2010s
     </label>
   </div>
   <div *ngFor="let movie of movies | decades:eighties:nineties:twoThousands:twentyTens">
