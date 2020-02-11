@@ -5,7 +5,7 @@
   <div class="movie">
     <div class="row">
       <div class="col-sm-3">
-        <img src="../../../assets/images/{{movie.poster}}">
+        <img src="../../../assets/images/{{movie.poster}}" alt="{{movie.title}} movie poster">
       </div>
       <div class="info col-sm-9">
         <div class="row">
@@ -24,7 +24,7 @@
           {{movie.plot}}
         </div>
         <div class="imdbLink pull-right">
-          <a class="btn btn-primary" role="button" href='{{ movie.imdbLink }}'>View on IMDB</a>
+          <a class="btn btn-primary" href='{{ movie.imdbLink }}'>View on IMDB</a>
         </div>
       </div>
     </div>
