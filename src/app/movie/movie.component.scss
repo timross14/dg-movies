@@ -33,8 +33,6 @@
   font-family: 'Courier New', Courier, monospace;
   border: solid;
   border-width: 1px;
-  border-color: #8D989D;
-  color: #8D989D;
   border-radius: 4px;
   text-align: center;
   width: 75%;
@@ -48,12 +46,16 @@
   padding-right: 12px;
 }
 
+.movie .imdbLink a {
+  color: black;
+}
+
 .btn-primary,  .btn-primary:active, .btn-primary:visited {
-  background-color: #F9B44A;
+  background-color: #ff9900;
 }
 
 .btn-primary:hover {
-  background-color: darkorange; 
+  background-color: #c77700; 
 }
 
 .movie .btn {
