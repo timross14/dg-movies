@@ -1,13 +1,16 @@
-# DgMovies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+## Update Summary
 
-## Known Issues / To Do List
-
-- Refactor CSS to be more dynamic and less pixel-dependent.  
-- Create component for checkboxes to clean up the app component.
-- A few unit tests for edge cases and components
-- End to end tests
+- Upgraded to Angular 9 (used `ng upgrade` in the CLI)
+- Reworked checkbox/label styling so they can be interacted with by space bar or enter
+- Adding checkbox labels to the tab index so they can be focused.  Before they were being focused, but it was hidden, as the inputs were hidden by bootstrap.
+- Increased contrast for "PG-13" and "View on IMDB" texts, as they were beyond the acceptable range.
+- Reworked some classes for styling to implement BEM naming.  This helps achieve a more predictable CSS specificity. 
+- Removing the `role="button"` attribute, as it could be misleading.  An anchor is semantically what this element is, so we want it to appear as such (a link).
+- Added alt text for images. These are to the point, but descriptive.
+- Distinguished between "Loading Movie" and "Loading Application" text.  When testing on slower network, this could cause confusion.
+- Using browserlist for IE11 support
+  
 
 ## Development server
 
