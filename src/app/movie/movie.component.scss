@@ -12,24 +12,24 @@
   margin: 10px;
 }
 
-.info {
+.movie__info {
   margin-top: 10px;
 }
 
-.movie img {
+.movie__img {
   width: 140px;
   height: auto;
   border-radius: 8px;
   margin: 15px;
 }
 
-.movie .plot {
+.movie__plot {
   padding-top: 10px;
   padding-right: 10px;
   font-size: 0.9em;
 }
 
-.movie .rating {
+.movie__rating {
   font-family: 'Courier New', Courier, monospace;
   border: solid;
   border-width: 1px;
@@ -38,7 +38,7 @@
   width: 75%;
 }
 
-.movie .imdbLink {
+.movie__imdbLink {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -46,8 +46,10 @@
   padding-right: 12px;
 }
 
-.movie .imdbLink a {
+.movie__anchor {
   color: black;
+  width: 190px;
+  margin: 10px;
 }
 
 .btn-primary,  .btn-primary:active, .btn-primary:visited {
@@ -58,15 +60,11 @@
   background-color: #c77700; 
 }
 
-.movie .btn {
-  width: 190px;
-  margin: 10px;
-}
-
 hr {
   margin: 0px 10px 5px -10px;
 }
-.title {
+
+.movie__title {
   margin: 0px;
   padding: 0px;
   padding-right: 5px;
