@@ -18,7 +18,6 @@ export class DecadePipe implements PipeTransform {
 
   sortMoviesByYear(movies, startYear: number, endYear: number) {
     return movies.filter(movie => {
-      console.log(movie.Year)
        if (movie.Year.length > 4) {
          let year = movie.Year.substring(0,4);
          return +year >= startYear && +year <= endYear;

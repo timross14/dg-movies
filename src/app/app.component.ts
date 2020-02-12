@@ -1,5 +1,5 @@
 import { OnInit, Component } from '@angular/core';
-import { OmdbService } from './omdb/omdb.service'
+import { OmdbService } from './omdb/omdb.service';
 
 @Component({
   selector: 'app-root',
@@ -31,13 +31,12 @@ export class AppComponent implements OnInit {
 
     let searchTerm = "Batman";
     this.omdbService.getMoviesByName(searchTerm).subscribe(movies => {
-      this.movies = movies['Search']; // do this in omdbservice to get MovieModels here
-      console.log(movies['Search'])
+      this.movies = movies['Search'];
       this.loading = false;
     })
   }
 
-  handleOnKeydown(event, decade) {
+  handleOnKeydown(event: KeyboardEvent, decade: string) {
     let isEnterOrSpace = event.keyCode === 32 || event.keyCode === 13;
     if(isEnterOrSpace) {
       event.preventDefault();
