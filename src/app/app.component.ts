@@ -37,10 +37,11 @@ export class AppComponent implements OnInit {
     })
   }
 
-  handleOnKeydown(event) {
+  handleOnKeydown(event, decade) {
     let isEnterOrSpace = event.keyCode === 32 || event.keyCode === 13;
     if(isEnterOrSpace) {
       event.preventDefault();
-    }
+      this[decade] = !this[decade]
+    } 
   }
 }

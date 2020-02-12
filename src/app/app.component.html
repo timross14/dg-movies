@@ -2,18 +2,17 @@
     LOADING MOVIE...
 </div>
 <div *ngIf="!loading" class="main container">
-    <!-- checkboxes would be good cantidates for components -->
-  <div class="btn-group btn-group-toggle decade-buttons" >
-    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="eighties" (keydown)="handleOnKeydown($event)">
+    <div class="btn-group btn-group-toggle decade-buttons" >
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="eighties" (keydown)="handleOnKeydown($event, 'eighties')">
       <input type="checkbox" tabindex="-1" [checked]="eighties" (change)="eighties = !eighties" autocomplete="off"> 1980s
     </label>
-    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="nineties">
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="nineties" (keydown)="handleOnKeydown($event, 'nineties')">
       <input type="checkbox" tabindex="-1" [checked]="nineties" (change)="nineties = !nineties" autocomplete="off"> 1990s
     </label>
-    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twoThousands">
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twoThousands" (keydown)="handleOnKeydown($event, 'twoThousands')">
       <input type="checkbox" tabindex="-1" [checked]="twoThousands" (change)="twoThousands = !twoThousands" autocomplete="off"> 2000s
     </label>
-    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twentyTens">
+    <label class="btn btn-primary" role="checkbox" tabindex="0" [class.active]="twentyTens" (keydown)="handleOnKeydown($event, 'twentyTens')">
       <input type="checkbox" tabindex="-1" [checked]="twentyTens" (change)="twentyTens = !twentyTens" autocomplete="off"> 2010s
     </label>
   </div>
